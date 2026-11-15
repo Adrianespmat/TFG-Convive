@@ -2,12 +2,6 @@
 
 Aplicación web para gestionar viviendas compartidas, gastos comunes, repartos y balances económicos. Proyecto individual de CFGS DAW.
 
-## Estado actual
-
-El backend de las fases de dominio está implementado y probado. Se ha iniciado el frontend local en Vue 3 con Vite, Bootstrap, Axios y Vue Router: incluye autenticación, layout protegido, panel, piso, gastos, balances y perfil. La integración en ejecución contra un backend/MySQL real y el despliegue integrado todavía están pendientes.
-
-La conexión real con MySQL está pendiente porque Docker no está instalado en este entorno. No se afirma que esa conexión esté probada.
-
 ## Requisitos previstos
 
 - Java 17 y Maven.
