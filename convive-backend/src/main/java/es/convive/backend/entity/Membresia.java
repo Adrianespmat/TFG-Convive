@@ -24,8 +24,6 @@ public class Membresia {
     @Column(nullable = false, length = 20)
     private Rol rol;
 
-    @Column(nullable = false)
-    private boolean activo = true;
 
     @Column(name = "fecha_alta", nullable = false)
     private LocalDate fechaAlta;
@@ -46,13 +44,10 @@ public class Membresia {
     public Usuario getUsuario() { return usuario; }
     public Piso getPiso() { return piso; }
     public Rol getRol() { return rol; }
-    public boolean isActivo() { return activo; }
+    public boolean estaActiva() { return fechaBaja == null; }
     public LocalDate getFechaAlta() { return fechaAlta; }
     public LocalDate getFechaBaja() { return fechaBaja; }
 
     public void setRol(Rol rol) { this.rol = rol; }
-    public void setActivo(boolean activo) {
-        this.activo = activo;
-        this.fechaBaja = activo ? null : LocalDate.now();
-    }
+    public void darDeBaja() { this.fechaBaja = LocalDate.now(); }
 }

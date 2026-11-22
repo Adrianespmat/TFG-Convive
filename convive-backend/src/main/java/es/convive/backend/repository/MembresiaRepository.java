@@ -9,15 +9,15 @@ import java.util.Optional;
 
 public interface MembresiaRepository extends JpaRepository<Membresia, Long> {
 
-    Optional<Membresia> findByUsuarioIdAndActivoTrue(Long usuarioId);
+    Optional<Membresia> findByUsuarioIdAndFechaBajaIsNull(Long usuarioId);
 
-    Optional<Membresia> findByUsuarioIdAndPisoIdAndActivoTrue(Long usuarioId, Long pisoId);
+    Optional<Membresia> findByUsuarioIdAndPisoIdAndFechaBajaIsNull(Long usuarioId, Long pisoId);
 
-    List<Membresia> findAllByPisoIdAndActivoTrueOrderByFechaAltaAsc(Long pisoId);
+    List<Membresia> findAllByPisoIdAndFechaBajaIsNullOrderByFechaAltaAsc(Long pisoId);
 
-    boolean existsByUsuarioIdAndActivoTrue(Long usuarioId);
+    boolean existsByUsuarioIdAndFechaBajaIsNull(Long usuarioId);
 
-    boolean existsByPisoIdAndUsuarioIdAndActivoTrue(Long pisoId, Long usuarioId);
+    boolean existsByPisoIdAndUsuarioIdAndFechaBajaIsNull(Long pisoId, Long usuarioId);
 
-    long countByPisoIdAndRolAndActivoTrue(Long pisoId, Rol rol);
+    long countByPisoIdAndRolAndFechaBajaIsNull(Long pisoId, Rol rol);
 }

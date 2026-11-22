@@ -38,6 +38,10 @@ public class Usuario {
 
     @OneToMany(mappedBy = "usuario")
     private List<Membresia> membresias = new ArrayList<>();
+    @OneToMany(mappedBy = "pagador")
+    private List<PagoLiquidacion> pagosRealizados = new ArrayList<>();
+    @OneToMany(mappedBy = "receptor")
+    private List<PagoLiquidacion> pagosRecibidos = new ArrayList<>();
 
     @PrePersist
     void onCreate() {
@@ -50,6 +54,8 @@ public class Usuario {
     public String getHashContrasena() { return hashContrasena; }
     public Instant getFechaCreacion() { return fechaCreacion; }
     public List<Membresia> getMembresias() { return membresias; }
+    public List<PagoLiquidacion> getPagosRealizados() { return pagosRealizados; }
+    public List<PagoLiquidacion> getPagosRecibidos() { return pagosRecibidos; }
 
     public void setNombre(String nombre) { this.nombre = nombre; }
     public void setCorreo(String correo) { this.correo = correo; }
